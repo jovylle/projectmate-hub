@@ -1,0 +1,8 @@
+node_modules
+*.tsbuildinfo
+dist
+.DS_Store
+*.local
+.env
+.env.*
+.wrangler

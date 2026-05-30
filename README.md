@@ -37,9 +37,31 @@ Host website (existing auth)
 - Server-side moderation (no client-spoofable admin headers)
 - Workspace scoping via `projectId` / `host.id`
 
+## Monorepo layout
+
+| Path | Role |
+|------|------|
+| [`packages/shared-types`](packages/shared-types) | Host session + capability schemas (Zod) |
+| [`apps/host-bff`](apps/host-bff) | Planned reference BFF for host auth bridge |
+| [`apps/api`](apps/api) | Planned hub API (threads, activity, moderation) |
+| [`docs/`](docs) | Architecture, host integration, roadmap |
+
+## Quick start (maintainers)
+
+```bash
+pnpm install
+pnpm build:types
+```
+
+## Docs
+
+- [Architecture](docs/architecture.md)
+- [Host integration](docs/host-integration.md)
+- [Roadmap](docs/roadmap.md)
+
 ## Status
 
-Early scaffold — architecture and API contracts are being defined before implementation.
+Phase 0 scaffold — shared types and docs are in place; BFF and hub API implementation next.
 
 ## Related
 
