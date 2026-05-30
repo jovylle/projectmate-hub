@@ -3,8 +3,11 @@
   "private": true,
   "packageManager": "pnpm@10.14.0",
   "scripts": {
-    "build": "pnpm -r run build",
-    "build:types": "pnpm --filter @projectmate-hub/shared-types build"
+    "build": "pnpm run build:types && pnpm run build:bridge && pnpm run build:overlay",
+    "build:types": "pnpm --filter @projectmate-hub/shared-types build",
+    "build:bridge": "pnpm --filter @projectmate-hub/host-bridge build",
+    "build:overlay": "pnpm --filter @projectmate-hub/overlay build",
+    "dev:overlay": "pnpm --filter @projectmate-hub/overlay dev"
   },
   "devDependencies": {
     "typescript": "^5.8.3"

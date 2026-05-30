@@ -1,0 +1,23 @@
+{
+  "name": "@projectmate-hub/host-bridge",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rm -f tsconfig.tsbuildinfo && tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@projectmate-hub/shared-types": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

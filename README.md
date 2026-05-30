@@ -41,7 +41,9 @@ Host website (existing auth)
 
 | Path | Role |
 |------|------|
-| [`packages/shared-types`](packages/shared-types) | Host session + capability schemas (Zod) |
+| [`packages/shared-types`](packages/shared-types) | Host session + `PM_HOST_SESSION` protocol (Zod) |
+| [`packages/host-bridge`](packages/host-bridge) | `ProjectMateHub.setSession()` for the embed iframe |
+| [`apps/overlay`](apps/overlay) | Hub overlay shell (posting-as + capabilities) |
 | [`apps/host-bff`](apps/host-bff) | Planned reference BFF for host auth bridge |
 | [`apps/api`](apps/api) | Planned hub API (threads, activity, moderation) |
 | [`docs/`](docs) | Architecture, host integration, roadmap |
@@ -50,8 +52,10 @@ Host website (existing auth)
 
 ```bash
 pnpm install
-pnpm build:types
+pnpm build
 ```
+
+Local overlay demo (after build): open `demo/session-bridge.html` over HTTP, or run `pnpm dev:overlay`.
 
 ## Docs
 
@@ -61,7 +65,7 @@ pnpm build:types
 
 ## Status
 
-Phase 0–1 — shared types and host session bridge (`PM_HOST_SESSION` / `ProjectMate.setSession`) live in [projectmate-embedded-app](https://github.com/jovylle/projectmate-embedded-app); BFF and hub API implementation next.
+Phase 1 — host session bridge (`PM_HOST_SESSION`, `ProjectMateHub.setSession`, hub overlay) is in this repo; BFF and hub API are next. The lightweight embed shell remains in [projectmate-embedded-app](https://github.com/jovylle/projectmate-embedded-app).
 
 ## Related
 

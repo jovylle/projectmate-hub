@@ -7,7 +7,7 @@
 │ Host website (your app, your auth)                      │
 │  - login/session                                        │
 │  - ProjectMate.init(...)                                │
-│  - optional: ProjectMate.setSession(...)                │
+│  - ProjectMateHub.setSession(...) (@projectmate-hub/host-bridge) │
 └───────────────────────────┬─────────────────────────────┘
                             │ postMessage (session snapshot)
 ┌───────────────────────────▼─────────────────────────────┐

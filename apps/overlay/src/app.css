@@ -1,0 +1,28 @@
+:global(html) {
+  margin: 0;
+  height: 100%;
+}
+
+:global(body) {
+  margin: 0;
+  height: 100%;
+}
+
+:global(html) {
+  --pm-bg: #f6f8fa;
+  --pm-panel: #ffffff;
+  --pm-text: #0f172a;
+  --pm-muted: #57606a;
+  --pm-border: #d0d7de;
+  --pm-accent: #6366f1;
+  color-scheme: light;
+}
+
+:global(html[data-theme="dark"]) {
+  --pm-bg: #0d1117;
+  --pm-panel: #161b22;
+  --pm-text: #e8ecf2;
+  --pm-muted: #8b949e;
+  --pm-border: #30363d;
+  color-scheme: dark;
+}

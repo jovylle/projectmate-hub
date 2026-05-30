@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hub session bridge demo</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 2rem;
+        line-height: 1.5;
+        max-width: 42rem;
+      }
+      button {
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      iframe {
+        display: block;
+        width: 100%;
+        height: 420px;
+        margin-top: 1rem;
+        border: 1px solid #d0d7de;
+        border-radius: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PM_HOST_SESSION demo (hub overlay)</h1>
+    <p>
+      This page loads <code>@projectmate-hub/overlay</code> in an iframe and pushes session snapshots with the same
+      protocol the host bridge uses.
+    </p>
+    <button type="button" id="sign-in">Sign in (demo user)</button>
+    <button type="button" id="sign-out">Sign out</button>
+    <iframe id="overlay" title="Hub overlay"></iframe>
+
+    <script type="module">
+      const overlayUrl = new URL("../apps/overlay/dist/index.html", import.meta.url);
+      const iframe = document.getElementById("overlay");
+      const overlayOrigin = new URL(overlayUrl).origin;
+      iframe.src = overlayUrl.href;
+
+      const PROTOCOL_VERSION = 1;
+
+      function postSession(session) {
+        iframe.contentWindow?.postMessage(
+          { v: PROTOCOL_VERSION, type: "PM_HOST_SESSION", payload: { session } },
+          overlayOrigin,
+        );
+      }
+
+      document.getElementById("sign-in").addEventListener("click", () => {
+        postSession({
+          user: { id: "demo-user", displayName: "Demo User", roles: ["member"] },
+          capabilities: {
+            canPost: true,
+            canComment: true,
+            canModerate: false,
+            canViewModeration: true,
+          },
+          issuedAt: new Date().toISOString(),
+        });
+      });
+
+      document.getElementById("sign-out").addEventListener("click", () => postSession(null));
+    </script>
+  </body>
+</html>

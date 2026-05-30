@@ -56,8 +56,10 @@ The iframe should call **your** origin (`/api/community/...`), not the hub API d
     host: { id: "acme-prod", name: "Acme", version: "1.0.0" },
   });
 
-  ProjectMate.setSession(
-    await fetch("/api/community/session").then((r) => (r.ok ? r.json() : null))
+  // After ProjectMate.init — from @projectmate-hub/host-bridge (or embed SDK when it re-exports this)
+  ProjectMateHub.registerAppUrl("https://projectmate.uft1.com/overlay/");
+  ProjectMateHub.setSession(
+    await fetch("/api/community/session").then((r) => (r.ok ? r.json() : null)),
   );
 </script>
 ```
