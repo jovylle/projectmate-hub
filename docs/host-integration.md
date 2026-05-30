@@ -56,8 +56,9 @@ The iframe should call **your** origin (`/api/community/...`), not the hub API d
     host: { id: "acme-prod", name: "Acme", version: "1.0.0" },
   });
 
-  // Planned API on embed SDK:
-  // ProjectMate.setSession(await fetch("/api/community/session").then(r => r.json()));
+  ProjectMate.setSession(
+    await fetch("/api/community/session").then((r) => (r.ok ? r.json() : null))
+  );
 </script>
 ```
 

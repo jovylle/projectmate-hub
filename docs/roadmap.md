@@ -9,9 +9,9 @@
 
 ## Phase 1 — Host session bridge
 
-- [ ] `PM_HOST_SESSION` protocol in embed SDK (embedded-app repo)
-- [ ] `ProjectMate.setSession()` helper on host
-- [ ] Overlay shows "posting as …" and gates moderation UI by capabilities
+- [x] `PM_HOST_SESSION` protocol in embed SDK ([embedded-app repo](https://github.com/jovylle/projectmate-embedded-app))
+- [x] `ProjectMate.setSession()` helper on host
+- [x] Overlay shows "posting as …" and gates moderation UI by capabilities
 
 ## Phase 2 — Host BFF template
 

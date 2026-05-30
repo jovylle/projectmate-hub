@@ -61,7 +61,7 @@ pnpm build:types
 
 ## Status
 
-Phase 0 scaffold — shared types and docs are in place; BFF and hub API implementation next.
+Phase 0–1 — shared types and host session bridge (`PM_HOST_SESSION` / `ProjectMate.setSession`) live in [projectmate-embedded-app](https://github.com/jovylle/projectmate-embedded-app); BFF and hub API implementation next.
 
 ## Related
 
