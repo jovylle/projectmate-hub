@@ -36,7 +36,7 @@
     <iframe id="overlay" title="Hub overlay"></iframe>
 
     <script type="module">
-      const overlayUrl = new URL("../apps/overlay/dist/index.html", import.meta.url);
+      const overlayUrl = new URL("./overlay/index.html", import.meta.url);
       const iframe = document.getElementById("overlay");
       const overlayOrigin = new URL(overlayUrl).origin;
       iframe.src = overlayUrl.href;

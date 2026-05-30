@@ -57,6 +57,8 @@ pnpm build
 
 Local overlay demo (after build): open `demo/session-bridge.html` over HTTP, or run `pnpm dev:overlay`.
 
+**Deploy (Netlify):** `pnpm run build:site` then `netlify deploy --filter @projectmate-hub/site --dir=site/out --prod --no-build`. Live site: https://projectmate-hub.netlify.app
+
 ## Docs
 
 - [Architecture](docs/architecture.md)

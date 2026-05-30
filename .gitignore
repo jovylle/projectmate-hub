@@ -1,6 +1,9 @@
 node_modules
 *.tsbuildinfo
 dist
+site/out
+.netlify
+site/.netlify
 .DS_Store
 *.local
 .env

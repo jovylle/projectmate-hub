@@ -1,0 +1,9 @@
+# Static hub overlay + session-bridge demo (`pnpm run build:site` → site/out).
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  command = "pnpm install --frozen-lockfile && pnpm run build:site"
+  publish = "site/out"
+
+[build.environment]
+  NODE_VERSION = "20"

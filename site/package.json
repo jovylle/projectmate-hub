@@ -1,0 +1,6 @@
+{
+  "name": "@projectmate-hub/site",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Static publish root for Netlify (see ../netlify.toml and scripts/build-site.mjs)"
+}

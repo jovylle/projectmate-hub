@@ -4,6 +4,7 @@
   "packageManager": "pnpm@10.14.0",
   "scripts": {
     "build": "pnpm run build:types && pnpm run build:bridge && pnpm run build:overlay",
+    "build:site": "pnpm run build && node scripts/build-site.mjs",
     "build:types": "pnpm --filter @projectmate-hub/shared-types build",
     "build:bridge": "pnpm --filter @projectmate-hub/host-bridge build",
     "build:overlay": "pnpm --filter @projectmate-hub/overlay build",
